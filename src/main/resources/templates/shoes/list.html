@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>ShoeStore - Tênis</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+    <nav>
+        <span>👟 ShoeStore</span>
+        <div>
+            <a th:href="@{/shoes}" sec:authorize="isAuthenticated()">Lista de Tênis</a>
+            <a th:href="@{/shoes/new}" sec:authorize="hasRole('ADMIN')">Novo Tênis</a>
+            <form th:action="@{/logout}" method="post" style="display:inline">
+                <button type="submit">Sair</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Lista de Tênis</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Marca</th>
+                    <th>Preço</th>
+                    <th>Tamanho</th>
+                    <th>Cor</th>
+                    <th sec:authorize="hasRole('ADMIN')">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="shoe : ${shoes}">
+                    <td th:text="${shoe.id}"></td>
+                    <td th:text="${shoe.name}"></td>
+                    <td th:text="${shoe.brand}"></td>
+                    <td th:text="${'R$ ' + shoe.price}"></td>
+                    <td th:text="${shoe.size}"></td>
+                    <td th:text="${shoe.color}"></td>
+                    <td sec:authorize="hasRole('ADMIN')">
+                        <a th:href="@{/shoes/edit/{id}(id=${shoe.id})}">Editar</a>
+                        <form th:action="@{/shoes/delete}" method="post" style="display:inline">
+                            <input type="hidden" name="id" th:value="${shoe.id}" />
+                            <button type="submit">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

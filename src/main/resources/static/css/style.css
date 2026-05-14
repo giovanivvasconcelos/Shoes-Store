@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    background-color: #222;
+    padding: 14px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav span {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+nav button:hover {
+    background-color: #c0392b;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #222;
+}
+
+/* ===== TABELA ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+thead {
+    background-color: #4a90e2;
+    color: white;
+}
+
+thead th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 14px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+    background-color: #f7f9fc;
+}
+
+tbody td {
+    padding: 12px 16px;
+    font-size: 14px;
+}
+
+/* ===== BOTÕES DA TABELA ===== */
+tbody td a {
+    background-color: #4a90e2;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    margin-right: 6px;
+}
+
+tbody td a:hover {
+    background-color: #357abd;
+}
+
+tbody td button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+tbody td button:hover {
+    background-color: #c0392b;
+}
+
+/* ===== FORMULÁRIO ===== */
+form .form-group {
+    margin-bottom: 20px;
+}
+
+form .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #555;
+}
+
+form .form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    background-color: white;
+}
+
+form .form-group input:focus {
+    border-color: #4a90e2;
+}
+
+form > button[type="submit"] {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+form > button[type="submit"]:hover {
+    background-color: #357abd;
+}
+
+form > a {
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+form > a:hove
